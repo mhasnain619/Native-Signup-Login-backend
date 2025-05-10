@@ -3,8 +3,8 @@ import bcrypt from 'bcrypt';
 
 export const signupController = async (req, res) => {
     try {
-        const { name, email, password } = req.body;
-        if (!name || !email || !password) {
+        const { name, email, password, confirmpassword } = req.body;
+        if (!name || !email || !password || !confirmpassword) {
             return res.status(400).json({ message: 'Please fill in all fields' });
         }
 
