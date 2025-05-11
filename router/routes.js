@@ -7,6 +7,6 @@ const router = express.Router()
 
 router.route('/api/signup').post(signupController)
 router.route('/api/login').post(loginController)
-router.route('/api/getUsers').get(tokenVerification, getAllUserController)
+router.route('/api/getUsers').get(getAllUserController)
 
 export default router

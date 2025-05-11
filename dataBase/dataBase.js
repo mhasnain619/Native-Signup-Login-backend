@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const connectDatabase = async () => {
     try {
-        const mongoUri = process.env.MONGO_URI;
+        const mongoUri = "mongodb+srv://hasnain0893:hasnain0893@nativesignuplogin.as8ysov.mongodb.net/"
 
         if (!mongoUri) {
             throw new Error("MONGO_URI not found in environment variables");
