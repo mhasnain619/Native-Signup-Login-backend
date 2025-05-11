@@ -1,6 +1,5 @@
 import 'dotenv/config'
 import express from 'express';
-import userModel from './models/userSchema.js';
 import cors from 'cors';
 import userRoutes from './router/routes.js'
 import { connectDatabase } from './dataBase/dataBase.js';
