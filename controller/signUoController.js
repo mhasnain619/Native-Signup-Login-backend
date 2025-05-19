@@ -3,8 +3,11 @@ import bcrypt from 'bcrypt';
 
 export const signupController = async (req, res) => {
     try {
-        const { name, email, password, confirmpassword } = req.body;
-        if (!name || !email || !password || !confirmpassword) {
+        console.log("Incoming request body:", req.body);  // Debug log
+
+        const { name, email, phone, password, confirmpassword } = req.body;
+
+        if (!name || !email || !phone || !password || !confirmpassword) {
             return res.status(400).json({ message: 'Please fill in all fields' });
         }
 
@@ -20,7 +23,7 @@ export const signupController = async (req, res) => {
 
         res.status(201).json({ message: 'User created successfully', newUser });
     } catch (error) {
-        console.error('Signup Error:', error);
+        console.error('Signup Error:', error); // Full error object
         res.status(500).json({ message: 'Internal Server Error', error: error.message });
     }
 }

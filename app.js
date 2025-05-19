@@ -6,7 +6,7 @@ import { connectDatabase } from './dataBase/dataBase.js';
 
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT
 
 // Middleware to parse JSON
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use('/has', userRoutes)
 
 connectDatabase()
 // Start Server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
 
